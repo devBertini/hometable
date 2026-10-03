@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f2a1b">
+<title>Mesa de Casa: Terms of Use</title>
+<meta name="description" content="Mesa de Casa terms of use.">
+<style>
+:root{--bg:#0f2a1b;--panel:#16402a;--card:#0f2f1e;--text:#fff5e0;--muted:#e8dfc9;--gold:#fac21a;--link:#ffe08a;--line:rgba(250,194,26,.28)}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+a{color:var(--link);text-decoration:underline}
+.hero{background:linear-gradient(180deg,#1d5e3a,var(--bg));padding:48px 16px 40px}
+.wrap{max-width:760px;margin:0 auto;padding:0 4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--text);font-family:"New York",Georgia,serif;letter-spacing:.02em}
+.brand svg{width:28px;height:28px}
+.hero h1{margin:18px 0 6px;font-size:28px;font-weight:800;font-family:"New York",Georgia,serif}
+.hero p{margin:0;color:var(--muted)}
+main{max-width:760px;margin:-22px auto 60px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 20px 8px}
+@media (min-width:600px){main{padding:28px 28px 8px}}
+.toggle{display:flex;gap:8px;margin:0 0 18px}
+.toggle button{border:1px solid var(--line);background:transparent;color:var(--text);padding:6px 14px;border-radius:999px;font-size:14px;cursor:pointer}
+.toggle button.active{background:var(--text);color:#0f2a1b;border-color:var(--text);font-weight:700}
+h2{font-size:19px;margin:24px 0 8px;color:var(--gold);font-family:"New York",Georgia,serif}
+.muted{color:var(--muted);font-size:14px}
+.badge{display:inline-block;background:rgba(255,245,224,.10);color:var(--text);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;margin:8px 0 20px}
+@media (min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border-radius:14px;padding:14px 16px}
+.card h3{margin:0 0 4px;font-size:16px;color:var(--gold)}
+.card p{margin:0;color:var(--muted);font-size:15px}
+footer{max-width:760px;margin:0 auto 50px;padding:0 16px;color:var(--muted);font-size:13px;text-align:center}
+hr{border:none;border-top:1px solid var(--line);margin:28px 0}
+.lang[hidden]{display:none}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="3" fill="#fbf7ee" stroke="#8c8c8c" stroke-width=".6"/><path d="M12 6c2 3 5 4.5 5 7a2.5 2.5 0 0 1-4.3 1.8L13.5 18h-3l.8-3.2A2.5 2.5 0 0 1 7 13c0-2.5 3-4 5-7Z" fill="#111"/></svg> Mesa de Casa</div>
+    <h1>Terms of Use</h1>
+    <p>The short version.</p>
+  </div>
+</header>
+<main>
+  <div class="toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+    <button id="btn-pt" onclick="setLang('pt')">Português</button>
+  </div>
+  <section class="lang" id="lang-en">
+<p>Mesa de Casa is licensed to you under Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard End User License Agreement</a>. These notes add what is specific to the game.</p>
+<h2>Purchases</h2>
+<p>The Pass is a one-time purchase handled by Apple. It stays with your Apple Account and can be restored in the game's Settings.</p>
+<h2>Your games</h2>
+<p>Your games and statistics live on your device. We cannot recover what was erased or lost with a device.</p>
+<h2>Contact</h2>
+<p><a href="mailto:bertini.b@icloud.com">bertini.b@icloud.com</a></p>
+<hr><p class="muted">Last updated: October 2, 2026</p>
+  </section>
+  <section class="lang" id="lang-pt" hidden>
+<p>O Mesa de Casa é licenciado a você pelo <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de Licença de Usuário Final padrão da Apple</a>. Estas notas acrescentam o que é específico do jogo.</p>
+<h2>Compras</h2>
+<p>O Passe é uma compra única feita pela Apple. Ele fica na sua Conta Apple e pode ser restaurado nos Ajustes do jogo.</p>
+<h2>Suas partidas</h2>
+<p>Suas partidas e estatísticas ficam no seu aparelho. Não conseguimos recuperar o que foi apagado ou perdido junto com um aparelho.</p>
+<h2>Contato</h2>
+<p><a href="mailto:bertini.b@icloud.com">bertini.b@icloud.com</a></p>
+<hr><p class="muted">Última atualização: 2 de outubro de 2026</p>
+  </section>
+</main>
+<footer>&copy; 2026 Mesa de Casa &middot; <a href="../">Home</a> &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../support/">Support</a> &middot; <a href="../terms/">Terms</a></footer>
+<script>
+function setLang(l){
+  document.getElementById('lang-en').hidden=(l!=='en');
+  document.getElementById('lang-pt').hidden=(l!=='pt');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.getElementById('btn-pt').classList.toggle('active',l==='pt');
+  document.documentElement.lang=l==='pt'?'pt-BR':'en';
+}
+if((navigator.language||'').toLowerCase().startsWith('pt'))setLang('pt');
+</script>
+</body>
+</html>
