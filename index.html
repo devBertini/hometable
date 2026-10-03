@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f2a1b">
+<title>Mesa de Casa</title>
+<meta name="description" content="Mesa de Casa: classic card games offline for iPhone, made for easy reading.">
+<style>
+:root{--bg:#0f2a1b;--panel:#16402a;--card:#0f2f1e;--text:#fff5e0;--muted:#e8dfc9;--gold:#fac21a;--link:#ffe08a;--line:rgba(250,194,26,.28)}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+a{color:var(--link);text-decoration:underline}
+.hero{background:linear-gradient(180deg,#1d5e3a,var(--bg));padding:48px 16px 40px}
+.wrap{max-width:760px;margin:0 auto;padding:0 4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--text);font-family:"New York",Georgia,serif;letter-spacing:.02em}
+.brand svg{width:28px;height:28px}
+.hero h1{margin:18px 0 6px;font-size:28px;font-weight:800;font-family:"New York",Georgia,serif}
+.hero p{margin:0;color:var(--muted)}
+main{max-width:760px;margin:-22px auto 60px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 20px 8px}
+@media (min-width:600px){main{padding:28px 28px 8px}}
+.toggle{display:flex;gap:8px;margin:0 0 18px}
+.toggle button{border:1px solid var(--line);background:transparent;color:var(--text);padding:6px 14px;border-radius:999px;font-size:14px;cursor:pointer}
+.toggle button.active{background:var(--text);color:#0f2a1b;border-color:var(--text);font-weight:700}
+h2{font-size:19px;margin:24px 0 8px;color:var(--gold);font-family:"New York",Georgia,serif}
+.muted{color:var(--muted);font-size:14px}
+.badge{display:inline-block;background:rgba(255,245,224,.10);color:var(--text);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;margin:8px 0 20px}
+@media (min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border-radius:14px;padding:14px 16px}
+.card h3{margin:0 0 4px;font-size:16px;color:var(--gold)}
+.card p{margin:0;color:var(--muted);font-size:15px}
+footer{max-width:760px;margin:0 auto 50px;padding:0 16px;color:var(--muted);font-size:13px;text-align:center}
+hr{border:none;border-top:1px solid var(--line);margin:28px 0}
+.lang[hidden]{display:none}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="3" fill="#fbf7ee" stroke="#8c8c8c" stroke-width=".6"/><path d="M12 6c2 3 5 4.5 5 7a2.5 2.5 0 0 1-4.3 1.8L13.5 18h-3l.8-3.2A2.5 2.5 0 0 1 7 13c0-2.5 3-4 5-7Z" fill="#111"/></svg> Mesa de Casa</div>
+    <h1>Classic cards, easy to read.</h1>
+    <p>Offline card games for iPhone. Starting with Spider Solitaire.</p>
+  </div>
+</header>
+<main>
+  <div class="toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+    <button id="btn-pt" onclick="setLang('pt')">Português</button>
+  </div>
+  <section class="lang" id="lang-en">
+<span class="badge">Coming soon to the App Store for iPhone</span>
+<p>Mesa de Casa is a collection of classic card games played offline, against no clock, made for easy reading: large ivory cards, motion the eye can follow, and nothing in the middle of a game. It starts with Spider Solitaire.</p>
+<div class="grid"><div class="card"><h3>Spider Solitaire</h3><p>Two decks, with 1, 2 or 4 suits. Drag a card or a run, or turn on Move with two taps in Settings.</p></div><div class="card"><h3>Games with a solution</h3><p>By default every deal can be won; a random deal is one tap away. Each deal has a code that deals it again.</p></div><div class="card"><h3>Made for easy reading</h3><p>Large ranks, four-color suits and high contrast as options, Dynamic Type in the menus, VoiceOver, and Reduce Motion honored.</p></div><div class="card"><h3>No clock, no pressure</h3><p>No timer and no move clock. Undo and Hint have free uses in every game.</p></div><div class="card"><h3>No account, no internet</h3><p>Your games and settings stay on your iPhone and it plays offline.</p></div><div class="card"><h3>Fair ads</h3><p>Never in the middle of a game: only between games, and an ad for one more Undo or Hint only when you ask. The one-time Pass removes every ad.</p></div></div>
+  </section>
+  <section class="lang" id="lang-pt" hidden>
+<span class="badge">Em breve na App Store para iPhone</span>
+<p>Mesa de Casa é uma coleção de jogos de cartas clássicos para jogar sem internet, sem relógio e com leitura fácil: cartas marfim grandes, movimento que o olho acompanha e nada no meio da partida. Começa com a Paciência Spider.</p>
+<div class="grid"><div class="card"><h3>Paciência Spider</h3><p>Dois baralhos, com 1, 2 ou 4 naipes. Arraste a carta ou a sequência, ou ligue Mover com dois toques nos Ajustes.</p></div><div class="card"><h3>Partidas com solução</h3><p>Por padrão toda partida pode ser vencida; a aleatória fica a um toque. Cada partida tem um código que a distribui de novo.</p></div><div class="card"><h3>Feito para ler fácil</h3><p>Números grandes, quatro cores e contraste alto como opções, Texto Dinâmico nos menus, VoiceOver e Reduzir Movimento respeitados.</p></div><div class="card"><h3>Sem relógio, sem pressa</h3><p>Sem cronômetro e sem tempo por jogada. Desfazer e Dica têm usos grátis em toda partida.</p></div><div class="card"><h3>Sem conta, sem internet</h3><p>Suas partidas e ajustes ficam no seu iPhone e o jogo roda sem internet.</p></div><div class="card"><h3>Anúncio justo</h3><p>Nunca no meio da partida: só entre partidas, e um anúncio por mais um Desfazer ou Dica só quando você pede. O Passe, de pagamento único, tira todos os anúncios.</p></div></div>
+  </section>
+</main>
+<footer>&copy; 2026 Mesa de Casa &middot; <a href="privacy/">Privacy</a> &middot; <a href="support/">Support</a> &middot; <a href="terms/">Terms</a></footer>
+<script>
+function setLang(l){
+  document.getElementById('lang-en').hidden=(l!=='en');
+  document.getElementById('lang-pt').hidden=(l!=='pt');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.getElementById('btn-pt').classList.toggle('active',l==='pt');
+  document.documentElement.lang=l==='pt'?'pt-BR':'en';
+}
+if((navigator.language||'').toLowerCase().startsWith('pt'))setLang('pt');
+</script>
+</body>
+</html>
