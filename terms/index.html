@@ -32,15 +32,15 @@ h2{font-size:19px;margin:24px 0 8px;color:var(--gold);font-family:"New York",Geo
 .card p{margin:0;color:var(--muted);font-size:15px}
 footer{max-width:760px;margin:0 auto 50px;padding:0 16px;color:var(--muted);font-size:13px;text-align:center}
 hr{border:none;border-top:1px solid var(--line);margin:28px 0}
-.lang[hidden]{display:none}
+.lang[hidden],.t[hidden]{display:none}
 </style>
 </head>
 <body>
 <header class="hero">
   <div class="wrap">
     <div class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="3" fill="#fbf7ee" stroke="#8c8c8c" stroke-width=".6"/><path d="M12 6c2 3 5 4.5 5 7a2.5 2.5 0 0 1-4.3 1.8L13.5 18h-3l.8-3.2A2.5 2.5 0 0 1 7 13c0-2.5 3-4 5-7Z" fill="#111"/></svg> Mesa de Casa</div>
-    <h1>Terms of Use</h1>
-    <p>The short version.</p>
+    <h1><span class="t t-en">Terms of Use</span><span class="t t-pt" hidden>Termos de Uso</span></h1>
+    <p><span class="t t-en">The short version.</span><span class="t t-pt" hidden>A versão curta.</span></p>
   </div>
 </header>
 <main>
@@ -56,7 +56,7 @@ hr{border:none;border-top:1px solid var(--line);margin:28px 0}
 <p>Your games and statistics live on your device. We cannot recover what was erased or lost with a device.</p>
 <h2>Contact</h2>
 <p><a href="mailto:bertini.b@icloud.com">bertini.b@icloud.com</a></p>
-<hr><p class="muted">Last updated: October 2, 2026</p>
+<hr><p class="muted">Last updated: October 12, 2026</p>
   </section>
   <section class="lang" id="lang-pt" hidden>
 <p>O Mesa de Casa é licenciado a você pelo <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de Licença de Usuário Final padrão da Apple</a>. Estas notas acrescentam o que é específico do jogo.</p>
@@ -66,14 +66,16 @@ hr{border:none;border-top:1px solid var(--line);margin:28px 0}
 <p>Suas partidas e estatísticas ficam no seu aparelho. Não conseguimos recuperar o que foi apagado ou perdido junto com um aparelho.</p>
 <h2>Contato</h2>
 <p><a href="mailto:bertini.b@icloud.com">bertini.b@icloud.com</a></p>
-<hr><p class="muted">Última atualização: 2 de outubro de 2026</p>
+<hr><p class="muted">Última atualização: 12 de outubro de 2026</p>
   </section>
 </main>
-<footer>&copy; 2026 Mesa de Casa &middot; <a href="../">Home</a> &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../support/">Support</a> &middot; <a href="../terms/">Terms</a></footer>
+<footer>&copy; 2026 Mesa de Casa &middot; <span class="t t-en"><a href="../">Home</a> &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../support/">Support</a> &middot; <a href="../terms/">Terms</a></span><span class="t t-pt" hidden><a href="../">Início</a> &middot; <a href="../privacy/">Privacidade</a> &middot; <a href="../support/">Suporte</a> &middot; <a href="../terms/">Termos</a></span></footer>
 <script>
 function setLang(l){
   document.getElementById('lang-en').hidden=(l!=='en');
   document.getElementById('lang-pt').hidden=(l!=='pt');
+  document.querySelectorAll('.t-en').forEach(function(e){e.hidden=(l!=='en');});
+  document.querySelectorAll('.t-pt').forEach(function(e){e.hidden=(l!=='pt');});
   document.getElementById('btn-en').classList.toggle('active',l==='en');
   document.getElementById('btn-pt').classList.toggle('active',l==='pt');
   document.documentElement.lang=l==='pt'?'pt-BR':'en';

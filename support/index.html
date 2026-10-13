@@ -32,15 +32,15 @@ h2{font-size:19px;margin:24px 0 8px;color:var(--gold);font-family:"New York",Geo
 .card p{margin:0;color:var(--muted);font-size:15px}
 footer{max-width:760px;margin:0 auto 50px;padding:0 16px;color:var(--muted);font-size:13px;text-align:center}
 hr{border:none;border-top:1px solid var(--line);margin:28px 0}
-.lang[hidden]{display:none}
+.lang[hidden],.t[hidden]{display:none}
 </style>
 </head>
 <body>
 <header class="hero">
   <div class="wrap">
     <div class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="3" fill="#fbf7ee" stroke="#8c8c8c" stroke-width=".6"/><path d="M12 6c2 3 5 4.5 5 7a2.5 2.5 0 0 1-4.3 1.8L13.5 18h-3l.8-3.2A2.5 2.5 0 0 1 7 13c0-2.5 3-4 5-7Z" fill="#111"/></svg> Mesa de Casa</div>
-    <h1>Support</h1>
-    <p>We read every message.</p>
+    <h1><span class="t t-en">Support</span><span class="t t-pt" hidden>Suporte</span></h1>
+    <p><span class="t t-en">We read every message.</span><span class="t t-pt" hidden>Lemos todas as mensagens.</span></p>
   </div>
 </header>
 <main>
@@ -54,8 +54,8 @@ hr{border:none;border-top:1px solid var(--line);margin:28px 0}
 <h2>Questions</h2>
 <p><strong>Where are my games saved?</strong> On your iPhone only. A game you leave is there when you come back, under Continue game.</p>
 <p><strong>I bought the Pass on another device.</strong> Open Settings in the game, then See the pass, and tap Restore purchase.</p>
-<p><strong>How do the ads work?</strong> Never in the middle of a game. After some completed games, an ad may show between games. When the free uses of Undo or Hint run out, you may watch an ad for one more, only if you want it. With the Pass there are no ads and three times as many free uses.</p>
-<p><strong>Can every game be won?</strong> Games with a solution, the default, can all be won. A random game may have no solution.</p>
+<p><strong>How do the ads work?</strong> Never in the middle of a game. After some completed games, an ad may show between games. In any game with Undo or Hint, when the free uses run out, you may watch an ad for one more, only if you want it. With the Pass there are no ads and three times as many free uses.</p>
+<p><strong>Can every game be won?</strong> In the six solitaires, deals with a solution, the default, can all be won. A random deal may have no solution. The card games, dominoes and darts are played against the computer and are won or lost by play.</p>
 <p><strong>How do I read the rules again?</strong> Menu, then Rules.</p>
 <p><strong>How do I report an ad?</strong> Write to us with what it showed and when; every ad also carries Google's own AdChoices mark to give feedback on it.</p>
   </section>
@@ -65,17 +65,19 @@ hr{border:none;border-top:1px solid var(--line);margin:28px 0}
 <h2>Perguntas</h2>
 <p><strong>Onde ficam salvas as minhas partidas?</strong> Só no seu iPhone. A partida que você deixa está lá quando você volta, em Continuar partida.</p>
 <p><strong>Comprei o Passe em outro aparelho.</strong> Abra os Ajustes do jogo, depois Ver o passe, e toque em Restaurar compra.</p>
-<p><strong>Como funcionam os anúncios?</strong> Nunca no meio da partida. Depois de algumas partidas concluídas, pode aparecer um anúncio entre partidas. Quando os usos grátis de Desfazer ou Dica acabam, você pode assistir a um anúncio para ganhar mais um, só se quiser. Com o Passe não há anúncios e os usos grátis triplicam.</p>
-<p><strong>Toda partida tem solução?</strong> As partidas com solução, o padrão, podem todas ser vencidas. Uma partida aleatória pode não ter solução.</p>
+<p><strong>Como funcionam os anúncios?</strong> Nunca no meio da partida. Depois de algumas partidas concluídas, pode aparecer um anúncio entre partidas. Em qualquer jogo com Desfazer ou Dica, quando os usos grátis acabam, você pode assistir a um anúncio para ganhar mais um, só se quiser. Com o Passe não há anúncios e os usos grátis triplicam.</p>
+<p><strong>Toda partida tem solução?</strong> Nas seis paciências, as partidas com solução, o padrão, podem todas ser vencidas. Uma partida aleatória pode não ter solução. Os jogos de cartas, o dominó e os dardos são contra o computador e se ganham ou perdem jogando.</p>
 <p><strong>Como leio as regras de novo?</strong> Menu, depois Regras.</p>
 <p><strong>Como denuncio um anúncio?</strong> Escreva para nós dizendo o que ele mostrou e quando; todo anúncio também traz a marca AdChoices do Google para dar sua opinião sobre ele.</p>
   </section>
 </main>
-<footer>&copy; 2026 Mesa de Casa &middot; <a href="../">Home</a> &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../support/">Support</a> &middot; <a href="../terms/">Terms</a></footer>
+<footer>&copy; 2026 Mesa de Casa &middot; <span class="t t-en"><a href="../">Home</a> &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../support/">Support</a> &middot; <a href="../terms/">Terms</a></span><span class="t t-pt" hidden><a href="../">Início</a> &middot; <a href="../privacy/">Privacidade</a> &middot; <a href="../support/">Suporte</a> &middot; <a href="../terms/">Termos</a></span></footer>
 <script>
 function setLang(l){
   document.getElementById('lang-en').hidden=(l!=='en');
   document.getElementById('lang-pt').hidden=(l!=='pt');
+  document.querySelectorAll('.t-en').forEach(function(e){e.hidden=(l!=='en');});
+  document.querySelectorAll('.t-pt').forEach(function(e){e.hidden=(l!=='pt');});
   document.getElementById('btn-en').classList.toggle('active',l==='en');
   document.getElementById('btn-pt').classList.toggle('active',l==='pt');
   document.documentElement.lang=l==='pt'?'pt-BR':'en';

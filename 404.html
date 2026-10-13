@@ -32,15 +32,15 @@ h2{font-size:19px;margin:24px 0 8px;color:var(--gold);font-family:"New York",Geo
 .card p{margin:0;color:var(--muted);font-size:15px}
 footer{max-width:760px;margin:0 auto 50px;padding:0 16px;color:var(--muted);font-size:13px;text-align:center}
 hr{border:none;border-top:1px solid var(--line);margin:28px 0}
-.lang[hidden]{display:none}
+.lang[hidden],.t[hidden]{display:none}
 </style>
 </head>
 <body>
 <header class="hero">
   <div class="wrap">
     <div class="brand"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="3" fill="#fbf7ee" stroke="#8c8c8c" stroke-width=".6"/><path d="M12 6c2 3 5 4.5 5 7a2.5 2.5 0 0 1-4.3 1.8L13.5 18h-3l.8-3.2A2.5 2.5 0 0 1 7 13c0-2.5 3-4 5-7Z" fill="#111"/></svg> Mesa de Casa</div>
-    <h1>Page not found</h1>
-    <p>Nothing here.</p>
+    <h1><span class="t t-en">Page not found</span><span class="t t-pt" hidden>Página não encontrada</span></h1>
+    <p><span class="t t-en">Nothing here.</span><span class="t t-pt" hidden>Nada aqui.</span></p>
   </div>
 </header>
 <main>
@@ -55,11 +55,13 @@ hr{border:none;border-top:1px solid var(--line);margin:28px 0}
 <p>Esta página não existe. A <a href="/hometable/">página inicial do Mesa de Casa</a> tem os links para todo o resto.</p>
   </section>
 </main>
-<footer>&copy; 2026 Mesa de Casa &middot; <a href="/hometable/">Home</a> &middot; <a href="/hometable/privacy/">Privacy</a> &middot; <a href="/hometable/support/">Support</a></footer>
+<footer>&copy; 2026 Mesa de Casa &middot; <span class="t t-en"><a href="/hometable/">Home</a> &middot; <a href="/hometable/privacy/">Privacy</a> &middot; <a href="/hometable/support/">Support</a></span><span class="t t-pt" hidden><a href="/hometable/">Início</a> &middot; <a href="/hometable/privacy/">Privacidade</a> &middot; <a href="/hometable/support/">Suporte</a></span></footer>
 <script>
 function setLang(l){
   document.getElementById('lang-en').hidden=(l!=='en');
   document.getElementById('lang-pt').hidden=(l!=='pt');
+  document.querySelectorAll('.t-en').forEach(function(e){e.hidden=(l!=='en');});
+  document.querySelectorAll('.t-pt').forEach(function(e){e.hidden=(l!=='pt');});
   document.getElementById('btn-en').classList.toggle('active',l==='en');
   document.getElementById('btn-pt').classList.toggle('active',l==='pt');
   document.documentElement.lang=l==='pt'?'pt-BR':'en';
